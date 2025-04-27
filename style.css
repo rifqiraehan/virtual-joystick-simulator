@@ -1,0 +1,269 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.info {
+    position: absolute;
+    top: -35px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    min-height: 20px;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.controller {
+    display: grid;
+    grid-template-areas:
+        "shoulder shoulder shoulder shoulder"
+        "dpad left-analog right-analog shapes";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    background-color: #333;
+    background-image: url('https://kamira.moe/wp-content/uploads/2025/03/niji-movie-1-outro2-1536x864.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.controller::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.controller > * {
+    z-index: 2;
+}
+
+.shoulder-buttons {
+    grid-area: shoulder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.spacer {
+    width: 16px;
+}
+
+.dpad {
+    grid-area: dpad;
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    gap: 5px;
+    justify-self: center;
+}
+
+.shape-buttons {
+    grid-area: shapes;
+    display: grid;
+    grid-template-areas:
+        ". triangle ."
+        "square . circle"
+        ". cross .";
+    gap: 5px;
+    justify-self: center;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    background-color: #666;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.btn:active {
+    background-color: #999;
+}
+
+.select-btn {
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.start-btn {
+    width: 80px;
+    height: 35px;
+    position: relative;
+    font-size: 14px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.start-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -17px;
+    width: 0;
+    height: 0;
+    border-top: 17.5px solid transparent;
+    border-bottom: 17.5px solid transparent;
+    border-left: 17px solid #666;
+}
+
+.ps-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.ps-btn img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+.up {
+    grid-area: up;
+}
+
+.down {
+    grid-area: down;
+}
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.triangle {
+    grid-area: triangle;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.cross {
+    grid-area: cross;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.square {
+    grid-area: square;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.circle {
+    grid-area: circle;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+#Triangle svg {
+    stroke: rgb(0, 251, 0);
+}
+
+#Cross svg {
+    stroke: rgb(0, 255, 247);
+}
+
+#Square svg {
+    stroke: #f0f;
+}
+
+#Circle svg {
+    stroke: rgb(219, 27, 27);
+}
+
+.btn svg {
+    stroke-width: 3;
+}
+
+
+.analog-container {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+}
+
+.left-analog {
+    grid-area: left-analog;
+}
+
+.right-analog {
+    grid-area: right-analog;
+}
+
+@media (max-width: 480px) {
+    .controller {
+        grid-template-areas:
+            "shoulder"
+            "dpad"
+            "left-analog"
+            "right-analog"
+            "shapes";
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .shoulder-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}

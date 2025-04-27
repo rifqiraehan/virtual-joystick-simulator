@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Joystick Simulator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.2/nipplejs.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="info" class="info"></div>
+
+    <div class="controller">
+      <div class="shoulder-buttons">
+        <div class="btn" id="L1">L1</div>
+        <div class="btn" id="L2">L2</div>
+
+        <div class="spacer"></div>
+
+        <div class="btn select-btn" id="Select">SELECT</div>
+        <div class="btn ps-btn" id="PS">
+          <img
+          src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://pens.ac.id&size=64"
+          alt="PS Logo">
+        </div>
+        <div class="btn start-btn" id="Start">START</div>
+
+        <div class="spacer"></div>
+
+        <div class="btn" id="R1">R1</div>
+        <div class="btn" id="R2">R2</div>
+      </div>
+
+
+      <div class="dpad">
+        <div class="btn up" id="Up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <polyline points="6 15 12 9 18 15"></polyline>
+          </svg>
+        </div>
+
+        <div class="btn down" id="Down">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+
+        <div class="btn left" id="Left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </div>
+
+        <div class="btn right" id="Right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+
+        </div>
+      </div>
+      <div class="analog-container left-analog" id="analog-left"></div>
+      <div class="analog-container right-analog" id="analog-right"></div>
+      <div class="shape-buttons">
+
+        <div class="btn triangle" id="Triangle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <polygon points="12,4 20,20 4,20"></polygon>
+          </svg>
+        </div>
+
+        <div class="btn cross" id="Cross">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none"
+            stroke-width="2">
+            <line x1="4" y1="4" x2="20" y2="20"></line>
+            <line x1="20" y1="4" x2="4" y2="20"></line>
+          </svg>
+        </div>
+
+        <div class="btn square" id="Square">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <rect x="4" y="4" width="16" height="16"></rect>
+          </svg>
+        </div>
+
+        <div class="btn circle" id="Circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="8"></circle>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
