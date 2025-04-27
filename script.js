@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://192.168.77.168');
+const socket = new WebSocket('ws://172.0.0.1');
 const infoDiv = document.getElementById('info');
 let activeButtons = new Set();
 let activeAnalog = '';
@@ -20,7 +20,9 @@ const buttonNameMap = {
     'Triangle': 'Segitiga (△)',
     'Cross': 'Silang (✕)',
     'Square': 'Kotak (□)',
-    'Circle': 'Lingkaran (○)'
+    'Start': 'Start',
+    'PS': 'PS',
+    'Select': 'Select',
 };
 
 function updateInfo() {
