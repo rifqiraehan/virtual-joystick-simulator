@@ -20,6 +20,7 @@ Virtual Joystick Simulator memudahkan user dalam menggunakan perangkat mobile se
     -   [ESPAsyncWebServer](https://github.com/ESP32Async/ESPAsyncWebServer)
     - [AsyncTCP](https://github.com/ESP32Async/AsyncTCP)
 8. Buat `New Project` pada Arduino IDE, salin dan tempel kode `controller-test.ino`.
+9. Ubah alamat web socket pada `script.js` menggunakan alamat yang muncul pada serial monitor di Arduino IDE.
 
 Jika Anda merasa proyek ini bermanfaat, harap beri bintang ⭐ pada repositori ini sebagai bentuk apresiasi. Anda juga dapat berkontribusi untuk mengembangkan proyek ini lebih lanjut dengan membuka **Issue**, memberikan saran, atau membuat **Pull Request**.
 
