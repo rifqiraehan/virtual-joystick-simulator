@@ -17,7 +17,7 @@ for (let i = 1; i <= 16; i++) {
 function playRandomSound() {
     const randomIndex = Math.floor(Math.random() * sounds.length);
     const sound = sounds[randomIndex];
-    sound.currentTime = 0; // Mulai dari awal
+    sound.currentTime = 0;
     sound.play().catch(e => console.error("Sound Play Error:", e));
 }
 
