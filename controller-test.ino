@@ -32,10 +32,17 @@ void loop() {
 
 void onWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client,
                       AwsEventType type, void *arg, uint8_t *data, size_t len) {
-
-  String msg = "";
+  bool isSerialPrinting;
 
   if (type == WS_EVT_DATA) {
+    if (isSerialPrinting) {
+      return;
+    }
+
+    isSerialPrinting = true;
+
+    String msg = "";
+
     for (size_t i = 0; i < len; i++) {
       msg += (char)data[i];
     }
@@ -43,23 +50,23 @@ void onWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client,
     if (msg.startsWith("LEFT_ANALOG_X")) {
       float lx = getValue(msg, ':', 1).toFloat();
       float ly = getValue(msg, ',', 1).substring(2).toFloat();
-      Serial.print("Left Analog X: ");
-      Serial.print(lx);
-      Serial.print(" Y: ");
-      Serial.println(ly);
+      char buffer[100];
+      snprintf(buffer, sizeof(buffer), "Left Analog X: %.2f Y: %.2f", lx, ly);
+      Serial.println(buffer);
     }
     else if (msg.startsWith("RIGHT_ANALOG_X")) {
       float rx = getValue(msg, ':', 1).toFloat();
       float ry = getValue(msg, ',', 1).substring(2).toFloat();
-      Serial.print("Right Analog X: ");
-      Serial.print(rx);
-      Serial.print(" Y: ");
-      Serial.println(ry);
+      char buffer[100];
+      snprintf(buffer, sizeof(buffer), "Right Analog X: %.2f Y: %.2f", rx, ry);
+      Serial.println(buffer);
     }
     else {
       Serial.print("Button: ");
       Serial.println(msg);
     }
+
+    isSerialPrinting = false;
   }
 }
 

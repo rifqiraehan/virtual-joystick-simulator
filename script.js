@@ -8,6 +8,19 @@ socket.onmessage = (event) => console.log('Message from ESP32:', event.data);
 socket.onerror = (error) => console.error('WebSocket error:', error);
 socket.onclose = () => console.log('Disconnected from ESP32');
 
+const sounds = [];
+for (let i = 1; i <= 16; i++) {
+    const audio = new Audio(`sounds/sound-${i}.mp3`);
+    sounds.push(audio);
+}
+
+function playRandomSound() {
+    const randomIndex = Math.floor(Math.random() * sounds.length);
+    const sound = sounds[randomIndex];
+    sound.currentTime = 0; // Mulai dari awal
+    sound.play().catch(e => console.error("Sound Play Error:", e));
+}
+
 const buttonNameMap = {
     'L1': 'L1',
     'L2': 'L2',
@@ -59,6 +72,7 @@ buttons.forEach(button => {
         }
         activeButtons.delete(buttonNameMap[buttonId] || buttonId);
         updateInfo();
+        playRandomSound();
     });
 });
 
@@ -94,6 +108,7 @@ leftAnalog.on('end', () => {
     }
     activeAnalog = '';
     updateInfo();
+    playRandomSound();
 });
 
 rightAnalog.on('move', (evt, data) => {
@@ -112,4 +127,5 @@ rightAnalog.on('end', () => {
     }
     activeAnalog = '';
     updateInfo();
+    playRandomSound();
 });
