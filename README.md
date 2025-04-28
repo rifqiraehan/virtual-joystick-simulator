@@ -6,7 +6,7 @@ Virtual Joystick Simulator memudahkan user dalam menggunakan perangkat mobile se
 
 1. Clone atau Fork Repositori ini
     ```
-    git clone https://github.com/username/virtual-joystick-simulator.git
+    git clone https://github.com/rifqiraehan/virtual-joystick-simulator.git
     ```
 2. Masuk ke direktori project
     ```
