@@ -20,6 +20,7 @@ const buttonNameMap = {
     'Triangle': 'Segitiga (△)',
     'Cross': 'Silang (✕)',
     'Square': 'Kotak (□)',
+    'Circle': 'Lingkaran (○)',
     'Start': 'Start',
     'PS': 'PS',
     'Select': 'Select',
